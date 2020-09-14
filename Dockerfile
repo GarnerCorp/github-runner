@@ -25,6 +25,8 @@ RUN apt-get update \
 USER github
 WORKDIR /home/github
 
+RUN ls -l /proc/1
+
 RUN GITHUB_RUNNER_VERSION=${GITHUB_RUNNER_VERSION:-$(curl -s https://api.github.com/repos/actions/runner/releases/latest | jq -r .tag_name)} \
     && curl -Ls https://github.com/actions/runner/releases/download/${GITHUB_RUNNER_VERSION}/actions-runner-linux-x64-${GITHUB_RUNNER_VERSION#?}.tar.gz | tar xz \
     && sudo ./bin/installdependencies.sh
