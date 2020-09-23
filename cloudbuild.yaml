@@ -4,4 +4,4 @@ steps:
       - --destination=gcr.io/$PROJECT_ID/github-runner:${_GHR_VERSION}-$COMMIT_SHA
       - --cache=true
 substitutions:
-  _GHR_VERSION: 0.0.0
+  _GHR_VERSION: 0.0.1
